@@ -1,0 +1,44 @@
+
+.container {
+    width: 600px;
+    margin: 0 auto;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  form {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+  }
+  
+  button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  #patient-list {
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+  
+  .patient-item {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f1f1f1;
+  }
+  
