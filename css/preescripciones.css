@@ -1,0 +1,106 @@
+html,
+body {
+  background-color: #ddf7fb;
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+header {
+  width: 100%;
+  background-color: #63d0ff;
+  color: #fff;
+  font-family: "Jost", sans-serif;
+  padding: 10px;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 20px;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline-block;
+  margin-right: 40px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+#barra-navegacion {
+  background-color: #04bafc;
+}
+
+#preescribcion {
+  width: 80%;
+}
+
+#contenedor-preescribcion {
+  width: 80%;
+  background-color: white;
+}
+
+#cont-tabla-preescripciones {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+
+#preescripciones-table {
+  width: 80%;
+}
+
+/** Css de Agregar Preescripcion **/
+label {
+  margin-bottom: 15px;
+}
+
+select {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.centrar-label label {
+  margin-top: 7px;
+}
+.central-input input {
+  margin-top: 10px;
+}
+
+#titulo {
+  width: 80%;
+}
+#horasss {
+  margin-top: 9px;
+}
+#contenido-registro-preescripcion {
+  background-color: #04bafc;
+}
+
+.margentop {
+  margin-top: 10px;
+}
+
+#cont-button-regPreescripcion {
+  text-align: right;
+}
+#cont-agregar-preescripcion {
+  width: 90%;
+  /* display: flex; */
+  justify-content: center;
+  background-color: white;
+}
