@@ -1,44 +1,108 @@
-
-.container {
-    width: 600px;
-    margin: 0 auto;
+body {
+    background-color: #dbf5f7;
+    color: #000000;
+    font-family: 'Jost', sans-serif;
   }
   
-  h1 {
-    text-align: center;
-  }
-  
-  form {
-    margin-bottom: 20px;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  input {
+  header {
     width: 100%;
+    background-color: #63D0FF;
+    color: #fff;
+    font-family: 'Jost', sans-serif;
+    padding: 10px;
+  }
+  
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .logo {
+    font-size: 20px;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul li {
+    display: inline-block;
+    margin-right: 40px;
+  }
+  
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    margin-top: 0;
+  }
+  
+  .search-container {
+    margin-bottom: 10px;
+  }
+  
+  .search-container input[type="text"] {
     padding: 5px;
-    margin-bottom: 10px;
   }
   
-  button {
-    background-color: #4CAF50;
-    color: white;
+  .search-container button {
+    padding: 5px 10px;
+  }
+  
+  #tabla-pacientes {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  #tabla-pacientes th,
+  #tabla-pacientes td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  #tabla-pacientes th {
+    background-color: #f2f2f2;
+  }
+  
+  .btn-nuevo-container {
+    text-align: left;
+    margin-top: 10px;
+  }
+  .btn-filtrar{
+    background-color: #63D0FF;
+    color: #ffffff;
     border: none;
-    padding: 10px 20px;
     cursor: pointer;
+    padding: 10px 40px;
+    font-size: 13px;
+    font-family: 'Jost', sans-serif;
   }
-  
-  #patient-list {
-    border: 1px solid #ccc;
-    padding: 10px;
+  .btn-nuevo{
+    background-color: #63D0FF;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    padding: 10px 40px;
+    font-size: 15px;
+    font-family: 'Jost', sans-serif;
   }
-  
-  .patient-item {
-    margin-bottom: 10px;
-    padding: 10px;
-    background-color: #f1f1f1;
+  .btn-nuevo-container button {
+    padding: 5px 10px;
   }
   
