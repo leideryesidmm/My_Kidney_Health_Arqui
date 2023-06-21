@@ -59,7 +59,7 @@ Y por último, realizar el seguimiento de las citas a las que ha asistido el pac
 
 La arquitectura en el desarrollo del proyecto es una Arquitectura Distribuida, consumiendo de manera independiente el backend (API REST) en Java Spring Boot, el frontend con HTML, CSS y JavaScript y la base de datos en MySQL.
 <p align="center">
-  <img src="[https://github.com/leideryesidmm/My_Kidney_Health_Arqui/assets/84026784/ab20b79e-997e-44e6-9053-7084ffd04ddc](https://github.com/leideryesidmm/My_Kidney_Health_Arqui/assets/114199483/bad16717-af8a-438f-8688-1dc0381ca42a)" alt="Texto alternativo">
+  <img src="https://github.com/leideryesidmm/My_Kidney_Health_Arqui/assets/114199483/bad16717-af8a-438f-8688-1dc0381ca42a" alt="Texto alternativo">
 </p>
 
 ## Documentación
