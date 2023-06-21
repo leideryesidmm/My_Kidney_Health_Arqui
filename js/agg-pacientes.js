@@ -10,18 +10,22 @@
       if (this.validateForm()) {
         const paciente = {
           nombre: this.getValue("nombre"),
-          documento: this.getValue("documento"),
-          fecha: this.getValue("fecha"),
+          correo:"leider@gmail",
+          contrasenia:"1234",
+          cedula: this.getValue("documento"),
+          fechaNacimiento: (this.getValue("fecha")+"T02:45:05.101Z"),
           eps: this.getValue("eps"),
-          estatura: this.getValue("estatura"),
+          altura: this.getValue("estatura"),
           edad: this.getValue("edad"),
-          tiposangre: this.getValue("tiposangre"),
+          tipoSangre: this.getValue("tiposangre"),
           rh: this.getValue("rh"),
           direccion: this.getValue("direccion"),
-          telefono: this.getValue("telefono"),
+          celular: this.getValue("telefono"),
           ocupacion: this.getValue("ocupacion"),
-          hipertension: this.getCheckedValue("hipertension"),
-          diabetes: this.getCheckedValue("diabetes")
+          peso:2,
+          pesoSeco:2
+          //hipertension: this.getCheckedValue("hipertension"),
+          //diabetes: this.getCheckedValue("diabetes")
         };
   
         this.guardarPaciente(paciente);
@@ -67,13 +71,13 @@
     clearFieldError(fieldId) {
       const field = document.getElementById(fieldId);
       const errorElement = field.nextElementSibling;
-      errorElement.textContent = "";
       field.classList.remove("error");
     }
   
     guardarPaciente(paciente) {
+      console.log(paciente);
      //REEMPLAZAR BACKEND 
-      fetch("ruta-del-backend", {
+      fetch("http://localhost:8081/paciente/crearPaciente", {
         method: "POST",
         body: JSON.stringify(paciente),
         headers: {
