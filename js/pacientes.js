@@ -1,4 +1,20 @@
+let listarPacientes= async()=>{
+  const peticion= await fetch("http://localhost:8081/Medico/findAllPacientes",{
+    method:"GET",
+    headers:{
+      "Accept":"application/json",
+      "Content-Type":"application/json"
+    }
+  });
+  const pacients=await peticion.json();
+  console.log(pacients);}
+  listarPacientes();
+
 document.addEventListener('DOMContentLoaded', function() {
+
+
+
+  
     // Obtener referencia a los elementos del DOM
     var filtroInput = document.getElementById('filtro-paciente');
     var btnFiltrar = document.getElementById('btn-filtrar');
@@ -93,4 +109,3 @@ function ocultarPaciente(pacienteId) {
     // Mostrar todos los pacientes al cargar la página
     actualizarTabla(pacientesData);
   });
-  
