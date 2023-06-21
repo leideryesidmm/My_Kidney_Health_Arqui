@@ -6,6 +6,7 @@ body {
   display: flex;
   flex-direction: column;
 }
+/* Estilo del menu */
 header {
   width: 100%;
   background-color: #63d0ff;
@@ -88,67 +89,27 @@ nav ul:after {
   clear: both;
 }
 
-#barra-navegacion {
-  background-color: #04bafc;
-}
-
-#preescribcion {
-  width: 80%;
-}
-
-#contenedor-preescribcion {
-  width: 80%;
-  background-color: white;
-}
-
-#cont-tabla-preescripciones {
-  display: flex;
-  justify-content: center;
-  margin: 0;
-}
-
-#preescripciones-table {
-  width: 80%;
-}
-
-/** Css de Agregar Preescripcion **/
-label {
-  margin-bottom: 15px;
-}
-
-select {
-  padding: 5px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-.centrar-label label {
-  margin-top: 7px;
-}
-.central-input input {
-  margin-top: 10px;
-}
-
-#titulo {
-  width: 80%;
+.container {
   text-align: center;
   background-color: #dbf5f7;
   font-family: "Jost", sans-serif;
   color: #808080;
   padding: 20px;
 }
-#horasss {
-  margin-top: 9px;
-}
-#contenido-registro-preescripcion {
-  background-color: #04bafc;
+
+#nombre-paciente {
+  background-color: #fff;
 }
 
-.margentop {
-  margin-top: 10px;
+.cont-examenes {
+  background-color: #fff;
 }
 
-#cont-button-regPreescripcion {
+.centrar-label label {
+  margin-top: 7px;
+}
+
+#cont-button-examenes {
   text-align: right;
 }
 #cont-agregar-preescripcion {

@@ -6,6 +6,7 @@ body {
   display: flex;
   flex-direction: column;
 }
+/* Estilo del menu */
 header {
   width: 100%;
   background-color: #63d0ff;
@@ -92,68 +93,52 @@ nav ul:after {
   background-color: #04bafc;
 }
 
-#preescribcion {
-  width: 80%;
-}
-
-#contenedor-preescribcion {
-  width: 80%;
-  background-color: white;
-}
-
-#cont-tabla-preescripciones {
-  display: flex;
-  justify-content: center;
-  margin: 0;
-}
-
-#preescripciones-table {
-  width: 80%;
-}
-
-/** Css de Agregar Preescripcion **/
-label {
-  margin-bottom: 15px;
-}
-
-select {
-  padding: 5px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-.centrar-label label {
-  margin-top: 7px;
-}
-.central-input input {
-  margin-top: 10px;
-}
-
-#titulo {
-  width: 80%;
+.container {
   text-align: center;
   background-color: #dbf5f7;
   font-family: "Jost", sans-serif;
   color: #808080;
   padding: 20px;
 }
-#horasss {
-  margin-top: 9px;
-}
-#contenido-registro-preescripcion {
-  background-color: #04bafc;
+
+#nombre-paciente {
+  background-color: #fff;
 }
 
-.margentop {
-  margin-top: 10px;
+.cont-especialistas {
+  display: flex;
+  justify-content: space-between;
 }
 
-#cont-button-regPreescripcion {
-  text-align: right;
-}
-#cont-agregar-preescripcion {
-  width: 90%;
-  /* display: flex; */
-  justify-content: center;
+.contenedor-especialista {
+  flex: 3;
+  left: 10px;
   background-color: white;
+  margin: 5px;
+}
+
+.separator {
+  width: 10px;
+  background-color: gray;
+  height: 100px;
+  margin: 0 20px;
+}
+
+.mager-border {
+  padding: 15px;
+}
+
+.central-cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+#contenedor-1 {
+  flex: 3;
+  /* background-color: #fff; */
+  left: 10px;
+  /* background-color: white; */
+  margin: 5px;
 }
