@@ -1,13 +1,12 @@
 <h1 align=center> Proyecto Final Arquitectura "Módulo Médico" Solución Tecnológica para Diálisis Peritoneal</h1>
 
-Este proyecto se baja en el desarrllo de una aplicación web que funciona como módulo para el médico tratante de personas con enfermedad renal crónica en tratamiento de diálisis Peritoneal. 
+Este proyecto se basa en el desarrollo de una aplicación web que funciona como módulo para el médico tratante de personas con enfermedad renal crónica en tratamiento de Diálisis Peritoneal. 
 
-Este módulo le permite al médico ver todos los pacientes que esta atendiendo, añadir nuevos, ver la información personal y clínica, editar dicha información y deshabilitar un paciente cuandos sea necesario.
+Este módulo le permite al médico ver todos los pacientes que esta atendiendo, añadir nuevos pacientes, ver la información personal y clínica, editar dicha información y deshabilitar un paciente cuandos sea necesario.
 También le permite ver, agregar y editar las prescripciones (que vienen siendo los recambios de líquido que se realiza el paciente a diario).
+Y por último, realizar el seguimiento de las citas a las que ha asistido el paciente con los distintos especialistas y la información de examenes que se haya realizado el paciente durante el mes.
 
-Y el seguimiento de las citas a las que ha asistido el paciente con los distintos especialistas y la información de examenes que se haya realizado el paciente durante el mes.
-
-## Instalación.
+## Instalación
 ### Prerequisitos
 - Tener instalado Java y Maven en el ordenador
 
@@ -58,8 +57,8 @@ Y el seguimiento de las citas a las que ha asistido el paciente con los distinto
 
 ## Arquitectura del proyecto
 
-La arquitectura en el desarrollo del proyecto es una Arquitectura Distibuida con un Spring backend con servicio Api Rest.
-<img src="">
+La arquitectura en el desarrollo del proyecto es una Arquitectura Distribuida, consumiendo de manera independiente el backend (API REST) en Java Spring Boot, el frontend con HTML, CSS y JavaScript y la base de datos en MySQL.
+<img src="arquitectura.jpg">
 
 ## Documentación
 La documentación de la aplicación se podrá ver en: [Documentación](https://docs.google.com/document/d/12OjZ_5jefQwNuvoaR-wIvdxSORHmp71-kIL4fjTayBk/edit)
