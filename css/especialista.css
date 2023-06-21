@@ -86,7 +86,7 @@ nav ul:after {
 }
 
 nav ul:after {
-  /* clear: both; */
+  clear: both;
 }
 
 #barra-navegacion {
@@ -112,7 +112,6 @@ nav ul:after {
 
 .contenedor-especialista {
   flex: 3;
-  background-color: #fff;
   left: 10px;
   background-color: white;
   margin: 5px;
