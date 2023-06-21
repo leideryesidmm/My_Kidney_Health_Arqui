@@ -83,6 +83,11 @@ select {
 
 #titulo {
   width: 80%;
+  text-align: center;
+  background-color: #dbf5f7;
+  font-family: "Jost", sans-serif;
+  color: #808080;
+  padding: 20px;
 }
 #horasss {
   margin-top: 9px;
