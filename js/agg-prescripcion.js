@@ -29,7 +29,8 @@ class PrescripcionForm {
   
     handleSubmit(event) {
       event.preventDefault();
-  
+      const tiempoTranscurrido = Date.now();
+      const hoy = new Date(tiempoTranscurrido);
       if (this.validateForm()) {
         const prescripcionCita={
             prescripcion:{
@@ -37,6 +38,7 @@ class PrescripcionForm {
         nocheSeca:this.getCheckedValue("noche")
         },
         cita:{
+            fecha:hoy,
             paciente:this.getValue("paciente"),
             medico:"1193098415"
         }

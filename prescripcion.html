@@ -44,11 +44,7 @@
         <nav>
           <ul>
             <li><a href="pacientes.html">Pacientes</a></li>
-<<<<<<< HEAD:prescripcion.html
             <li><a href="prescripcion.html">Prescripción</a></li>
-            <li><a href="seguimiento.html">Seguimiento</a></li>
-=======
-            <li><a href="preescripcion.html">Prescripción</a></li>
             <li>
               Seguimiento
               <ul class="submenu">
@@ -56,8 +52,7 @@
                 <li><a href="examenes.html">Examenes</a></li>
               </ul>
             </li>
->>>>>>> e1c500ecace974a32f18dc932abfcbebb45b4fd1:preescripcion.html
-            <li><a href="perfil.html">Nombre</a></li>
+            <li><a href="index.html">Cerrar sesión</a></li>
           </ul>
         </nav>
       </div>
@@ -102,14 +97,15 @@
         >
           <thead>
             <tr>
-              <th>Mes</th>
+              <th>Paciente</th>
               <th>Fecha de Inicio</th>
               <th>Fecha de Fin</th>
-              <th>Concentraciones</th>
               <th>Acciones</th>
             </tr>
           </thead>
-          <tbody id="animales-body"></tbody>
+          <tbody id="tabla-prescripciones-body">
+        <!-- Los pacientes se generarán dinámicamente aquí -->
+      </tbody>
         </table>
         <!--Boton agregar preescripcion-->
       </div>
@@ -126,5 +122,6 @@
         window.location.href = "Aggpreescripcion.html";
       }
     </script>
+      <script src="js/prescripcion.js"></script>
   </body>
 </html>
