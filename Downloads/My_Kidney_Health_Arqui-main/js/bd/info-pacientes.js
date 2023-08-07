@@ -3,28 +3,66 @@ document.addEventListener('DOMContentLoaded', function() {
   const prescripcionInfo = document.getElementById('prescripcionInfo');
   const seguimientoData = document.getElementById('seguimientoData');
 
-  // Obtener los datos del paciente
-  fetch('ruta-del-backend/paciente')
-    .then(response => response.json())
-    .then(data => {
+  let servidorAPI="http://localhost:8081/";
+    const cedulaEncript =localStorage.getItem("cedulaPaciente");
+    console.log(cedulaEncript);
+var cedulaEncriptada= "";
+
+let obtenerCedulaEncriptada=async()=>{
+  const peticion= await fetch(servidorAPI+'Medico/findAllPacientes',{
+    method:'GET',
+    headers:{
+      "Accept":"application/json",
+      "Content-Type": "application/json"
+    }
+      });
+      const pacientes=await peticion.json();
+      console.log(pacientes);
+      pacientes.forEach(paciente=>{
+        let decryptedCedula = CryptoJS.AES.decrypt(paciente.cedula, 'clave_secreta').toString(CryptoJS.enc.Utf8);
+        const cedulaCodificado = encodeURIComponent(decryptedCedula);
+        console.log(decryptedCedula);
+        if(cedulaEncript===cedulaCodificado)
+        cedulaEncriptada=paciente.cedula;
+        
+      })   
+      console.log(cedulaEncriptada);
+      return cedulaEncriptada;
+}
+
+let llenarInfoPaciente=async()=>{
+let cedulaPaciente= await obtenerCedulaEncriptada();
+let pacienteInDto ={
+  cedula:cedulaPaciente
+}
+const peticion= await fetch(servidorAPI+"paciente/findPacienteByCedula",{
+  method:"POST",
+  headers: {
+    "Accept":"application/json",
+"Content-Type":"application/json"
+  },
+  body: JSON.stringify(pacienteInDto)
+});
+const paciente=await peticion.json();
       // Mostrar los datos del paciente en el contenedor correspondiente
       pacienteInfo.innerHTML = `
-        <p>Nombre: ${data.nombre}</p>
-        <p>Documento: ${data.documento}</p>
-        <p>Fecha de nacimiento: ${data.fecha}</p>
-        <p>EPS: ${data.eps}</p>
-        <p>Estatura: ${data.estatura}</p>
-        <p>Edad: ${data.edad}</p>
-        <p>Tipo de sangre: ${data.tiposangre}</p>
-        <p>Rh: ${data.rh}</p>
-        <p>Dirección: ${data.direccion}</p>
-        <p>Teléfono: ${data.telefono}</p>
-        <p>Ocupación: ${data.ocupacion}</p>
+        <p>Nombre: ${paciente.nombre}</p>
+        <p>Documento: ${paciente.documento}</p>
+        <p>Fecha de nacimiento: ${paciente.fecha}</p>
+        <p>EPS: ${paciente.eps}</p>
+        <p>Estatura: ${paciente.estatura}</p>
+        <p>Edad: ${paciente.edad}</p>
+        <p>Tipo de sangre: ${paciente.tiposangre}</p>
+        <p>Rh: ${paciente.rh}</p>
+        <p>Dirección: ${paciente.direccion}</p>
+        <p>Teléfono: ${paciente.telefono}</p>
+        <p>Ocupación: ${paciente.ocupacion}</p>
       `;
-    });
+}
+});
 
 // Obtener la prescripción de la diálisis
-fetch('ruta-del-backend/prescripcion')
+/*fetch('ruta-del-backend/prescripcion')
 .then(response => response.json())
 .then(data => {
   // Obtener el contenedor de la prescripción
@@ -58,6 +96,7 @@ fetch('ruta-del-backend/prescripcion')
   prescripcionContainer.appendChild(promedioUltrafiltracion);
   prescripcionContainer.appendChild(diasAnalizados);
 });
+}
 
 // Obtener el seguimiento
 fetch('ruta-del-backend/seguimiento')
@@ -132,4 +171,4 @@ btnEliminar.addEventListener('click', function() {
   ocultarPaciente(pacienteId);
 });
 
-});
+});*/

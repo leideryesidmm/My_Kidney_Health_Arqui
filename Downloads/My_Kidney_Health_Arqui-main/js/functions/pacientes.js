@@ -1,3 +1,7 @@
+let servidorAPI="http://localhost:8081/";
+var cedulaEncriptada= "";
+
+
 let pacientesTratados = async () => {
   try {
     // Call listarPacientes and await its result
@@ -5,6 +9,7 @@ let pacientesTratados = async () => {
 
     let msg = "";
     if (pacientes != null && pacientes.length > 0) {
+      
       msg += '<br>' +
         '<table class="pacientes">' +
         '<tr>' +
@@ -14,6 +19,8 @@ let pacientesTratados = async () => {
         '</tr>';
 
       pacientes.forEach((paciente) => {
+        
+        localStorage.setItem("cedulaPaciente", paciente.cedula);
         msg +=
           '<tr>' +
           '<td>' + paciente.nombre + '</td>' +
