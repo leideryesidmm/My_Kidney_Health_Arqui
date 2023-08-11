@@ -1,8 +1,36 @@
 let servidorAPI="http://localhost:8081/";
+
+let validarPaciente = async () => {
+  let documento = document.getElementById('documento').value;
+  console.log(documento);
+
+  const peticion = await fetch(servidorAPI + 'Medico/findAllPacientes', {
+    method: 'GET',
+    headers: {
+      "Accept": "application/json",
+      "Content-Type": "application/json"
+    }
+  });
+
+  const pacientes = await peticion.json();
+  console.log(pacientes);
+
+  for (const paciente of pacientes) {
+    let decryptedCedula = CryptoJS.AES.decrypt(paciente.cedula, 'clave_secreta').toString(CryptoJS.enc.Utf8);
+    const cedulaCodificado = decodeURIComponent(decryptedCedula);
+    console.log(cedulaCodificado);
+    console.log(decryptedCedula);
+    if (documento === cedulaCodificado) {
+      return true;
+    }
+  }
+
+  return false;
+}
  
  let crearPaciente=async()=> {
-
-
+  var  existe= await validarPaciente();
+  console.log(existe);
       var nombre = document.getElementById('nombre').value;
       var documento = document.getElementById('documento').value;
       var fechaNacimiento = document.getElementById('fecha').value+'T02:45:05.101Z';
@@ -42,7 +70,7 @@ let servidorAPI="http://localhost:8081/";
 
       }
 
-
+if(existe==false){
       let decryptedCedula = CryptoJS.AES.decrypt(pacienteInDto.nombre, 'clave_secreta').toString(CryptoJS.enc.Utf8);
 console.log(decryptedCedula);
 let decryptedNombre = CryptoJS.AES.decrypt(pacienteInDto.cedula, 'clave_secreta').toString(CryptoJS.enc.Utf8);
@@ -66,10 +94,10 @@ console.log(decryptedNombre);
         pacienteForm.form.style.display = "none";
 
       })
-      .catch(error => {
-        console.error(error);
-      });
-      location.href="pacientes.html";
+    }
+      else{
+        $('#modal3').modal('show');
+      }
  }
 
  let listarPacientes = async () => {

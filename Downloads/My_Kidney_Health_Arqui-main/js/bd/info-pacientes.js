@@ -5,10 +5,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
   let servidorAPI="http://localhost:8081/";
     const cedulaEncript =localStorage.getItem("cedulaPaciente");
-    console.log(cedulaEncript);
+    console.log(cedulaEncript); 
 var cedulaEncriptada= "";
 
 let obtenerCedulaEncriptada=async()=>{
+  console.log(cedulaEncript);
   const peticion= await fetch(servidorAPI+'Medico/findAllPacientes',{
     method:'GET',
     headers:{
@@ -20,7 +21,7 @@ let obtenerCedulaEncriptada=async()=>{
       console.log(pacientes);
       pacientes.forEach(paciente=>{
         let decryptedCedula = CryptoJS.AES.decrypt(paciente.cedula, 'clave_secreta').toString(CryptoJS.enc.Utf8);
-        const cedulaCodificado = encodeURIComponent(decryptedCedula);
+        const cedulaCodificado = decodeURIComponent(decryptedCedula);
         console.log(decryptedCedula);
         if(cedulaEncript===cedulaCodificado)
         cedulaEncriptada=paciente.cedula;
@@ -44,21 +45,60 @@ const peticion= await fetch(servidorAPI+"paciente/findPacienteByCedula",{
   body: JSON.stringify(pacienteInDto)
 });
 const paciente=await peticion.json();
+console.log(paciente);
+
+let nombre= CryptoJS.AES.decrypt(paciente.nombre, "clave_secreta").toString(CryptoJS.enc.Utf8);
+let cedula= CryptoJS.AES.decrypt(paciente.cedula, "clave_secreta").toString(CryptoJS.enc.Utf8);
+let eps= CryptoJS.AES.decrypt(paciente.eps, "clave_secreta").toString(CryptoJS.enc.Utf8);
+let altura= CryptoJS.AES.decrypt(paciente.altura, "clave_secreta").toString(CryptoJS.enc.Utf8);
+let tipoSangre= CryptoJS.AES.decrypt(paciente.tipoSangre, "clave_secreta").toString(CryptoJS.enc.Utf8);
+let direccion= CryptoJS.AES.decrypt(paciente.direccion, "clave_secreta").toString(CryptoJS.enc.Utf8);
+let celular= CryptoJS.AES.decrypt(paciente.celular, "clave_secreta").toString(CryptoJS.enc.Utf8);
+let ocupacion= CryptoJS.AES.decrypt(paciente.ocupacion, "clave_secreta").toString(CryptoJS.enc.Utf8);
       // Mostrar los datos del paciente en el contenedor correspondiente
       pacienteInfo.innerHTML = `
-        <p>Nombre: ${paciente.nombre}</p>
-        <p>Documento: ${paciente.documento}</p>
-        <p>Fecha de nacimiento: ${paciente.fecha}</p>
-        <p>EPS: ${paciente.eps}</p>
-        <p>Estatura: ${paciente.estatura}</p>
+        <div class="row">
+        <div class="col-4">
+        <p>Nombre: ${nombre}</p>
+        </div>
+        <div class="col-4">
+        <p>Documento: ${cedula}</p>
+        </div>
+        <div class="col-4">
+        <p>Fecha de nacimiento: ${paciente.fechaNacimiento.split("T")[0]}</p>
+        </div>
+        <div class="row">
+        <div class="col-4">
+        <p>EPS: ${eps}</p>
+        </div>
+        <div class="col-4">
+        <p>Estatura: ${paciente.altura} cms.</p>
+        </div>
+        <div class="col-4">
         <p>Edad: ${paciente.edad}</p>
-        <p>Tipo de sangre: ${paciente.tiposangre}</p>
+        </div>
+        <div class="row">
+        <div class="col-4">
+        <p>Tipo de sangre: ${tipoSangre}</p>
+        </div>
+        <div class="col-4">
         <p>Rh: ${paciente.rh}</p>
-        <p>Dirección: ${paciente.direccion}</p>
-        <p>Teléfono: ${paciente.telefono}</p>
-        <p>Ocupación: ${paciente.ocupacion}</p>
+        </div>
+        <div class="col-4">
+        <p>Dirección: ${direccion}</p>
+        </div>
+        <div class="row">
+        <div class="col-4">
+        <p>Teléfono: ${celular}</p>
+        </div>
+        <div class="col-4">
+        <p>Ocupación: ${ocupacion}</p>
+        </div>
+        </div>
       `;
 }
+llenarInfoPaciente();
+
 });
 
 // Obtener la prescripción de la diálisis
@@ -172,3 +212,4 @@ btnEliminar.addEventListener('click', function() {
 });
 
 });*/
+

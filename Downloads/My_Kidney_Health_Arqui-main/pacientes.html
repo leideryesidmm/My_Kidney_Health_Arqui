@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,13 +38,15 @@
     </div>
   </div>
 
-  <script src="js/bd/agg-pacientes.js"></script>
-  <script src="js/functions/pacientes.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js">
-pacientesTratados(listarPacientes());
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
+  <script src="./js/bd/agg-pacientes.js"></script>
+  <script src="./js/functions/pacientes.js"></script>
+  <script src="./js/bd/info-pacientes.js"></script>
+
   </script>
   <script>
-    
+    pacientesTratados(listarPacientes());
+    llenarInfoPaciente()
   </script>
 </body>
 </html>

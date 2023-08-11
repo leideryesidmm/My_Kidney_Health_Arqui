@@ -1,4 +1,4 @@
-let servidorAPI="http://localhost:8081/";
+
 var cedulaEncriptada= "";
 
 
@@ -26,10 +26,10 @@ let pacientesTratados = async () => {
           '<td>' + paciente.nombre + '</td>' +
           '<td>' + paciente.cedula + '</td>' +
           '<td>' +
-          '<a href="info-pacientes.html?cedula=' + paciente.cedula + '" type="button">' +
+          '<a href="info-pacientes.html" onclick="llenarInfoPaciente()"type="button">' +
           '<img src="../img/logo.jpg" class="actualizar"/>' +
           '</a>' +
-          '<a href="InhabilitarPaciente.html?cedula=' + paciente.cedula + '" type="button">' +
+          '<a href="InhabilitarPaciente.html" type="button">' +
           '<img src="../img/nefrologo.png" class="actualizar"/>' +
           '</a>' +
           '</td>' +

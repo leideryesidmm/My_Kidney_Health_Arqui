@@ -61,7 +61,7 @@ body {
     padding: 20px;
     margin-left: 200px;
     margin-right: 200px;
-    height: 400px;
+    height: fit-content;
     font-size: 15px;
     padding-left: 15%;
     text-align: left;
