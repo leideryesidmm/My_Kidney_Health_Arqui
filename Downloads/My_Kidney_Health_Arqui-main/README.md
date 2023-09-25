@@ -52,6 +52,8 @@ Y por último, realizar el seguimiento de las citas a las que ha asistido el pac
   O descargue el archivo zip del repositorio y descomprime.
 
   Puedes abrirlo en cualquier IDE de desarrollo y correrlo de manera local, este utilizará el puerto 8080 para su funcionamiento
+  
+#### Base de datos
 
 ## Arquitectura del proyecto
 
